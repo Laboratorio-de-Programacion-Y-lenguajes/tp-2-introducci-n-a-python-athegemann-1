@@ -215,16 +215,82 @@ Lo utilicé tal cual.
 
 ### 4 - diccionarios.py
 
-**Herramienta**: 
+**Herramienta**: GPT-5.4
 
 **Prompt usado**:
-> 
+> Necesito una función aplicar_funcion(lista: list, func) -> list en Python 3.13.
+>Quiero comparar enfoques y elegir uno simple y performante para un TP:
+>
+>    nueva lista que cada elemento sea func(elemento)
+>    alguna manera de implementar la funcion a cada elemento y guardarlo nuevamente
+>    alguna otra alternativa que corra con solo una funcion y aplique a toda la lista
+>    
+>    Analizá pros/contras (performance + simplicidad + edge cases como puntuación).
+>    Luego recomendá UNO y escribí el código con docstring, dejando claro qué casos NO cubre (por ejemplo, "hola," vs "hola").
+
 
 **Resultado obtenido**:
+Voy a revisar el módulo de funciones para ajustar `aplicar_funcion` con una solución simple y eficiente, y dejar explícitos los límites de lo que cubre.
+
+Read [](file:///home/javirulo/LPyL/tp-2-introducci-n-a-python-athegemann-1/src/funciones.py)
+
+Read [](file:///home/javirulo/LPyL/tp-2-introducci-n-a-python-athegemann-1/tests/test_funciones.py)
+
+Ya tengo el contexto y voy a implementar `aplicar_funcion` con el enfoque que mejor equilibra simplicidad y rendimiento para este TP: una comprensión de listas.
+
+Generating patch (15 lines) in [](file:///home/javirulo/LPyL/tp-2-introducci-n-a-python-athegemann-1/src/funciones.py)
+
+
+```
+
+```
+Elegí y dejé implementada la opción más equilibrada para este TP en funciones.py: comprensión de listas.
+
+Comparación rápida de enfoques:
+
+1. `for` con `append`
+- Pros: muy explícito, fácil de entender para principiantes.
+- Contras: más verboso.
+- Performance: buena, pero normalmente un poco peor que una comprensión de listas.
+
+2. Comprensión de listas
+- Pros: simple, idiomática en Python, normalmente la opción más clara cuando querés construir una nueva lista.
+- Contras: menos didáctica si recién estás aprendiendo bucles.
+- Performance: suele ser la mejor o muy cercana a la mejor para este caso.
+
+3. `map(func, lista)`
+- Pros: concisa.
+- Contras: devuelve un iterador, así que para obtener lista hay que envolverlo en `list(...)`; a veces es menos legible si la función no es trivial.
+- Performance: puede ser competitiva, pero para este caso no aporta una ventaja clara frente a la comprensión.
+
+Recomendación:
+- Para este TP, usar comprensión de listas.
+- Es simple, performante y expresa exactamente “aplicar una función a cada elemento y devolver una nueva lista”.
+
+La función quedó así:
+
+    def aplicar_funcion(lista: list, func) -> list:
+        """
+        Aplica func a cada elemento de la lista y retorna una nueva lista.
+
+        No normaliza ni limpia los elementos antes de aplicar la función:
+        por ejemplo, "hola," y "hola" se tratan como valores distintos.
+        """
+        return [func(elemento) for elemento in lista]
+
+Casos que no cubre:
+- No limpia texto ni quita puntuación.
+- No convierte tipos automáticamente.
+- Si `func` falla con un elemento, la excepción se propaga.
+- Si la lista está vacía, devuelve `[]`.
+
+Si querés, también te puedo escribir la versión con `for` explícito para comparar lado a lado con esta.
+
+Made changes.
 
 
 **¿Lo usaste tal cual o lo modificaste?**
-
+Lo utilicé tal cual.
 
 ---
 
