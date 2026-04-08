@@ -9,11 +9,11 @@ from src.variables import (
 
 
 def test_crear_saludo_simple():
-    assert crear_saludo("Ana") == "Hola, Ana!"
+    assert crear_saludo("Ana", 25, "Buenos Aires") == "Hola Ana, tienes 25 años y vives en Buenos Aires."
 
 
 def test_crear_saludo_otro_nombre():
-    assert crear_saludo("Juan") == "Hola, Juan!"
+    assert crear_saludo("Juan", 30, "Córdoba") == "Hola Juan, tienes 30 años y vives en Córdoba."
 
 
 def test_suma_enteros_positivos():
