@@ -462,16 +462,96 @@ Lo utilicé tal cual.
 
 ### 7 - operaciones.py
 
-**Herramienta**: 
+**Herramienta**: GPT-5.4
 
 **Prompt usado**:
-> 
+>Tengo que implementar capitalizar_palabras(texto: str) -> str para un TP.
+>    Compará 3 enfoques:
+>    A) utilizar alguna funcion que capitalice cada palabra de un string directamente,
+>    B) crear una lista con las palabras y capitalizar la primer letra de cada palabra, luego recomponer la lista a un string
+>    C) capitalizar cada caracter que siga despues de un espacio.
+>    Elegí el más adecuado para principiantes, justificá, y escribí el código final.
+
 
 **Resultado obtenido**:
+Voy a comparar los 3 enfoques para que veas cuál es mejor para aprender:
 
+**Enfoque A: Función directa**
+```python
+def capitalizar_palabras(texto: str) -> str:
+    return texto.title()
+```
+- Pros: muy conciso
+- Contras: es "magia", no aprendes cómo funciona, no es flexible
+
+**Enfoque B: Lista + manipulación + recomposición (RECOMENDADO)**
+```python
+def capitalizar_palabras(texto: str) -> str:
+    palabras = texto.split()
+    capitalizadas = []
+    for palabra in palabras:
+        capitalizadas.append(palabra.capitalize())
+    return " ".join(capitalizadas)
+```
+- Pros: didáctico, verás cada paso, aprendes split/join, fácil de modificar
+- Contras: un poco más de código (pero educativo)
+
+**Enfoque C: Iteración por caracteres**
+```python
+def capitalizar_palabras(texto: str) -> str:
+    resultado = ""
+    capitalizar_siguiente = True
+    for char in texto:
+        if char == " ":
+            resultado += char
+            capitalizar_siguiente = True
+        elif capitalizar_siguiente:
+            resultado += char.upper()
+            capitalizar_siguiente = False
+        else:
+            resultado += char.lower()
+    return resultado
+```
+- Pros: enseña lógica de estado
+- Contras: complejo para principiantes, fácil para equivocarse
+
+**Elección: Enfoque B**
+
+Justificación:
+- Equilibra claridad con educación
+- Enseña conceptos fundamentales: listas, strings, métodos útiles
+- Código legible y fácil de debuggear
+- Flexible para cambios futuros
+
+Código final:
+
+```python
+def capitalizar_palabras(texto: str) -> str:
+    """
+    Retorna el texto con la primera letra de cada palabra en mayúscula.
+    Ejemplo: capitalizar_palabras("hola mundo") -> "Hola Mundo"
+    """
+    palabras = texto.split()
+    capitalizadas = []
+    for palabra in palabras:
+        capitalizadas.append(palabra.capitalize())
+    return " ".join(capitalizadas)
+```
+
+Alternativa compacta (con comprensión):
+```python
+def capitalizar_palabras(texto: str) -> str:
+    """
+    Retorna el texto con la primera letra de cada palabra en mayúscula.
+    Ejemplo: capitalizar_palabras("hola mundo") -> "Hola Mundo"
+    """
+    return " ".join(palabra.capitalize() for palabra in texto.split())
+```
+
+¿Querés que implemente esto en operaciones.py?
 
 **¿Lo usaste tal cual o lo modificaste?**
-
+Utilice tal cual la primer opcion que me dio (Codigo final, no la alternativa)
 
 ---
 
