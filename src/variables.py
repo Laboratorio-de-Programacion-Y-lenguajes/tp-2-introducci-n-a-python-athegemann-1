@@ -6,12 +6,13 @@
 # ============================================================
 
 
-def crear_saludo(nombre: str) -> str:
+def crear_saludo(nombre: str, edad: int, ciudad, str) -> str:
     """
     Retorna un saludo personalizado.
     Ejemplo: crear_saludo("Ana") -> "Hola, Ana!"
     """
     # TU CÓDIGO AQUÍ
+    print(f"Hola {nombre}, tienes {edad} años y vives en {ciudad}.")
     pass
 
 
