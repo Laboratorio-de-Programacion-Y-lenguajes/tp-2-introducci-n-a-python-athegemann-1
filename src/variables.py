@@ -6,12 +6,13 @@
 # ============================================================
 
 
-def crear_saludo(nombre: str, edad: int, ciudad: str) -> str:
+def crear_saludo(nombre: str) -> str:
     """
-    crear_saludo("Ana", 25, "Buenos Aires") -> "Hola Ana, tienes 25 años y vives en Buenos Aires."
+    Retorna un saludo personalizado.
+    Ejemplo: crear_saludo("Ana") -> "Hola, Ana!"
     """
     # TU CÓDIGO AQUÍ
-    return f"Hola {nombre}, tienes {edad} años y vives en {ciudad}."
+    pass
 
 def suma_enteros(a: int, b: int) -> int:
     """
