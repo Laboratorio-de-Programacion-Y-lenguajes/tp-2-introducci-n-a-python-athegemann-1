@@ -560,5 +560,8 @@ Utilice tal cual la primer opcion que me dio (Codigo final, no la alternativa)
 Respondé brevemente (3-5 oraciones):
 
 - ¿Qué aprendiste sobre cómo formular buenos prompts?
+Que la IA te puede dar muchas alternativas sobre como realizar la misma acción, y la diferencia con los prompts es mas que nada la explicación que le dan al usuario.
 - ¿En qué casos la IA fue útil y en cuáles no?
+No le encontre mucho sentido al modo de prompting de Interaccion Invertida, ya que directamente podrias hacerle esas preguntas en el mismo mensaje en vez de tener que volver a escribirle y gastando tokens. Diria lo mismo del metodo de refinamiento de preguntas pero en ese comprendo que las distintas explicaciones sirven para enseñar al usuario el por qué de las cosas.
 - ¿Qué harías diferente la próxima vez?
+No se responder esta pregunta.
