@@ -215,10 +215,100 @@ Lo utilicé tal cual.
 
 ### 4 - diccionarios.py
 
-**Herramienta**: GPT-5.4
+**Herramienta**: 
 
 **Prompt usado**:
-> Necesito una función aplicar_funcion(lista: list, func) -> list en Python 3.13.
+> Generá 8 ejemplos de strings en Python que tengan palabras sueltas, como por ejemplo "hola mundo hola"
+> Para cada ejemplo, mostráme el texto y mostrame un diccionario en python que tenga cada palabra y la cantidad de veces que aparece en el texto, por ejemplo: {"hola": 2, "mundo":1}
+> Luego extraé una regla general para implementar contar_palabras(texto).
+
+**Resultado obtenido**:
+Acá van 8 ejemplos simples de textos y su diccionario de frecuencias de palabras.
+
+1. Texto: `"hola mundo hola"`
+   Diccionario: `{"hola": 2, "mundo": 1}`
+
+2. Texto: `"python es divertido python"`
+   Diccionario: `{"python": 2, "es": 1, "divertido": 1}`
+
+3. Texto: `"perro gato perro pez"`
+   Diccionario: `{"perro": 2, "gato": 1, "pez": 1}`
+
+4. Texto: `"uno dos tres dos uno"`
+   Diccionario: `{"uno": 2, "dos": 2, "tres": 1}`
+
+5. Texto: `"manzana pera manzana banana pera"`
+   Diccionario: `{"manzana": 2, "pera": 2, "banana": 1}`
+
+6. Texto: `"rojo azul verde azul rojo rojo"`
+   Diccionario: `{"rojo": 3, "azul": 2, "verde": 1}`
+
+7. Texto: `"casa auto casa mesa auto"`
+   Diccionario: `{"casa": 2, "auto": 2, "mesa": 1}`
+
+8. Texto: `"sol luna sol estrella luna sol"`
+   Diccionario: `{"sol": 3, "luna": 2, "estrella": 1}`
+
+Regla general para implementar `contar_palabras(texto)`:
+
+1. Separar el texto en palabras.
+2. Recorrer palabra por palabra.
+3. Para cada palabra:
+   - si ya está en el diccionario, sumar 1
+   - si no está, agregarla con valor 1
+4. Devolver el diccionario final
+
+En forma más concreta, la lógica sería:
+
+- crear un diccionario vacío
+- hacer `texto.split()` para obtener las palabras
+- contar apariciones acumulando en el diccionario
+
+Si querés, te puedo escribir enseguida la función `contar_palabras(texto)` en Python.
+
+
+**¿Lo usaste tal cual o lo modificaste?**
+Utilice la funcion tal cual, que luego de pedirsela fue:
+```python
+def contar_palabras(texto: str) -> dict:
+    """
+    Retorna un diccionario con la frecuencia de cada palabra.
+    Ejemplo: contar_palabras("hola mundo hola") -> {"hola": 2, "mundo": 1}
+    Las palabras deben ser comparadas en minúsculas.
+    """
+    conteo = {}
+    for palabra in texto.lower().split():
+        if palabra in conteo:
+            conteo[palabra] += 1
+        else:
+            conteo[palabra] = 1
+    return conteo
+```
+
+
+---
+
+### 5 - loops.py
+
+**Herramienta**: 
+
+**Prompt usado**:
+> 
+
+**Resultado obtenido**:
+
+
+**¿Lo usaste tal cual o lo modificaste?**
+
+
+---
+
+### 6 - funciones.py
+
+**Herramienta**: GPT-6.4
+
+**Prompt usado**:
+> Necesito una función aplicar_funcion(lista: list, func) -> list en Python 2.13.
 >Quiero comparar enfoques y elegir uno simple y performante para un TP:
 >
 >    nueva lista que cada elemento sea func(elemento)
@@ -291,36 +381,6 @@ Made changes.
 
 **¿Lo usaste tal cual o lo modificaste?**
 Lo utilicé tal cual.
-
----
-
-### 5 - loops.py
-
-**Herramienta**: 
-
-**Prompt usado**:
-> 
-
-**Resultado obtenido**:
-
-
-**¿Lo usaste tal cual o lo modificaste?**
-
-
----
-
-### 6 - funciones.py
-
-**Herramienta**: 
-
-**Prompt usado**:
-> 
-
-**Resultado obtenido**:
-
-
-**¿Lo usaste tal cual o lo modificaste?**
-
 
 ---
 
