@@ -7,12 +7,8 @@
 
 
 def crear_saludo(nombre: str) -> str:
-    """
-    Retorna un saludo personalizado.
-    Ejemplo: crear_saludo("Ana") -> "Hola, Ana!"
-    """
-    # TU CÓDIGO AQUÍ
-    pass
+    """Devuelve un saludo con el formato 'Hola, <nombre>'."""
+    return f"Hola, {nombre}!"
 
 def suma_enteros(a: int, b: int) -> int:
     """
