@@ -154,15 +154,61 @@ Modifique un typo ("cerro" en vez de "cero")
 
 ### 3 - listas.py
 
-**Herramienta**: 
+**Herramienta**: GPT-5.4
 
 **Prompt usado**:
-> 
+> Estoy resolviendo un ejercicio de listas en Python con estas reglas:
+>
+>    la funcion debe llamarse suma_lista
+>    se le debe pasar un dato lista
+>    debe devolver un numero entero que sea la suma de todos los elementos de la lista
+>    ¿Podés revisar mi lógica como verificador cognitivo?
+>
+>    enumerá casos borde que debería testear,
+>    decime errores típicos,
+>    proponé 3 tests con entradas y salidas esperadas
+>    escribime el codigo en python para la funcion
+
 
 **Resultado obtenido**:
+Perfecto, te lo reviso como verificador cognitivo.
+
+1. Casos borde que conviene testear
+1. Lista vacía: debería devolver 0.
+2. Lista con un solo elemento: debería devolver ese mismo valor.
+3. Lista con enteros negativos y positivos mezclados: valida que la suma combine signos bien.
+4. Lista con todos ceros: debería devolver 0.
+5. Lista con valores grandes: para confirmar que no hay errores de lógica.
+6. Lista con tipos no esperados (por ejemplo strings o float): definir si querés error o conversión.
+
+2. Errores típicos en este ejercicio
+1. Inicializar mal el acumulador (por ejemplo en None o "").
+2. Olvidar retornar el acumulador al final.
+3. Usar mal el rango y saltear elementos.
+4. Sobrescribir la lista en vez de acumular en una variable aparte.
+5. Devolver dentro del loop y cortar antes de tiempo.
+6. Asumir que siempre habrá elementos (falla en lista vacía).
+
+3. Tres tests concretos (entrada y salida esperada)
+1. Entrada: [1, 2, 3, 4] -> Salida esperada: 10
+2. Entrada: [] -> Salida esperada: 0
+3. Entrada: [-5, 10, -2] -> Salida esperada: 3
+
+4. Implementación en Python
+~~~python
+def suma_lista(lista: list[int]) -> int:
+    """Devuelve la suma de todos los elementos enteros de una lista."""
+    total = 0
+    for elemento in lista:
+        total += elemento
+    return total
+~~~
+
+Si querés, en el siguiente paso te doy una versión con validación estricta de tipos para que devuelva error cuando haya elementos no enteros.
 
 
 **¿Lo usaste tal cual o lo modificaste?**
+Lo utilicé tal cual.
 
 
 ---
