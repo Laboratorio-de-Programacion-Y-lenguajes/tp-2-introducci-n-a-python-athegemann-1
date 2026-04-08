@@ -290,16 +290,92 @@ def contar_palabras(texto: str) -> dict:
 
 ### 5 - loops.py
 
-**Herramienta**: 
+**Herramienta**: GPT-5.4
 
 **Prompt usado**:
-> 
+> Como hago para crear una lista en python?
 
 **Resultado obtenido**:
+En Python, una lista se crea con corchetes.
 
+Ejemplos:
+
+- Lista vacía: []
+- Lista con elementos: [1, 2, 3]
+- Lista de textos: ["hola", "mundo"]
+
+También podés crearla así:
+
+- usando list(): list()
+- a partir de un rango: list(range(5))  -> [0, 1, 2, 3, 4]
+
+Si querés, te muestro cómo agregar, eliminar y recorrer elementos de una lista.
+> Como puedo llenar esta lista con numeros utilizando un loop?
+Hay varias formas de llenar una lista con números usando un loop:
+
+**Forma 1: Agregar con append()**
+```python
+lista = []
+for i in range(5):
+    lista.append(i)
+# resultado: [0, 1, 2, 3, 4]
+```
+
+**Forma 2: Comprensión de listas (más concisa)**
+```python
+lista = [i for i in range(5)]
+# resultado: [0, 1, 2, 3, 4]
+```
+
+**Forma 3: Con números personalizados**
+```python
+lista = []
+for i in range(1, 11):  # del 1 al 10
+    lista.append(i * 2)
+# resultado: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+```
+
+**Forma 4: Llenar una lista existente**
+```python
+lista = [0] * 5  # [0, 0, 0, 0, 0]
+for i in range(len(lista)):
+    lista[i] = i + 1
+# resultado: [1, 2, 3, 4, 5]
+```
+
+La opción más idiomática en Python es la comprensión de listas (forma 2).
+
+¿Querés que te muestre algún caso específico?
+> Como puedo hacer para que los numeros sean una secuencia desde 1 hasta un numero N inclusive
+Para crear una secuencia desde 1 hasta N inclusive, usa `range(1, N+1)`:
+
+**Con append:**
+```python
+N = 10
+lista = []
+for i in range(1, N + 1):
+    lista.append(i)
+# resultado: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+**Con comprensión (recomendado):**
+```python
+N = 10
+lista = [i for i in range(1, N + 1)]
+# resultado: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+**Explicación del range:**
+- `range(1, N + 1)` genera números desde 1 hasta N (inclusive)
+- el segundo argumento es exclusivo, por eso sumamos 1
+
+Si N = 5:
+- `range(1, 6)` genera: 1, 2, 3, 4, 5
+
+Eso es todo lo que necesitás.
 
 **¿Lo usaste tal cual o lo modificaste?**
-
+Utilice tal cual el ejemplo de append.
 
 ---
 
