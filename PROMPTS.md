@@ -66,7 +66,7 @@ Pasos que no son necesarios para este caso:
 Si quieres, también te lo puedo escribir con un estilo más básico, como para un ejercicio de introducción, o más prolijo usando una función.
 
 **¿Lo usaste tal cual o lo modificaste?**
-Lo modifique para que aplique a la funcion, pidiendo las variables que me decia. El print lo utilicé tal cual.
+Lo modifique para que aplique a la funcion, pidiendo las variables que me decia. El print lo cambie a un return.
 
 ---
 
