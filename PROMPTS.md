@@ -34,39 +34,42 @@ Explicá qué cambios hiciste y por qué (o por qué no cambiaste nada).
 **Herramienta**: GPT-5.4
 
 **Prompt usado**:
-> Necesito crear un saludo personalizado. Se que tengo que pedirle al usuario su nombre, edad y ciudad. Necesito el codigo de python y una secuencia completa de pasos, incluyendo los pasos que no tuve en cuenta y descartando los innecesarios.
+> Actuá como tutor de Python 3.13. Dame una receta paso a paso para: crear una funcion llamada crear_saludo, enviar como parametro el nombre de una persona, devolver un string con el formato "Hola, " y el nombre de la persona. No uses librerías externas. Mostrá la función con docstring.
+
 
 **Resultado obtenido**:
-Para crear un saludo personalizado, necesitas 3 datos de entrada: nombre, edad y ciudad. Con eso, el programa puede construir el mensaje final.
-
+1. Definí la función con el nombre solicitado y un parámetro para el nombre:
 ```python
-nombre = input("Ingresa tu nombre: ")
-edad = int(input("Ingresa tu edad: "))
-ciudad = input("Ingresa tu ciudad: ")
-
-print(f"Hola {nombre}, tienes {edad} años y vives en {ciudad}.")
+def crear_saludo(nombre):
 ```
 
-Secuencia completa de pasos:
+2. Agregá un docstring justo debajo de la firma para explicar qué hace:
+```python
+    """Devuelve un saludo con el formato 'Hola, <nombre>'."""
+```
 
-1. Pedir al usuario su nombre.
-2. Pedir al usuario su edad.
-3. Convertir la edad a número entero, porque `input()` siempre devuelve texto.
-4. Pedir al usuario su ciudad.
-5. Construir el saludo usando esos tres datos.
-6. Mostrar el saludo en pantalla.
+3. Construí y devolvé el texto usando f-string:
+```python
+    return f"Hola, {nombre}"
+```
 
-Pasos que no son necesarios para este caso:
+4. Resultado completo:
+```python
+def crear_saludo(nombre: str) -> str:
+    """Devuelve un saludo con el formato 'Hola, <nombre>'."""
+    return f"Hola, {nombre}"
+```
 
-1. Crear funciones, porque el ejercicio es muy simple.
-2. Usar condicionales, porque no hay decisiones que tomar.
-3. Usar bucles, porque solo se pide un saludo una vez.
-4. Importar módulos, porque no hace falta ninguna librería externa.
+5. Ejemplo de uso:
+```python
+saludo = crear_saludo("Ana")
+print(saludo)  # Hola, Ana
+```
 
-Si quieres, también te lo puedo escribir con un estilo más básico, como para un ejercicio de introducción, o más prolijo usando una función.
+Sin librerías externas, compatible con Python 3.13.
 
 **¿Lo usaste tal cual o lo modificaste?**
-Lo modifique para que aplique a la funcion, pidiendo las variables que me decia. El print lo cambie a un return.
+Agregue el '!' al final del nombre como piden los tests.
 
 ---
 
